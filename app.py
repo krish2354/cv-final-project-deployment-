@@ -26,7 +26,7 @@ DEFAULT_ARTIFACTS = BASE / 'artifacts'
 st.set_page_config(page_title='CellCount AI Studio', page_icon='🩸', layout='wide',
                    initial_sidebar_state='expanded')
 
-st.markdown('''<style>
+st.html('''<style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap');
 html, body, [class*="css"], [data-testid="stAppViewContainer"] {font-family: 'DM Sans', Arial, sans-serif;}
 [data-testid="stAppViewContainer"] {background: #f4f7fa;}
@@ -55,7 +55,7 @@ html, body, [class*="css"], [data-testid="stAppViewContainer"] {font-family: 'DM
 div.stButton > button[kind="primary"] {background:#07a99a;border:none;border-radius:10px;color:#fff;font-weight:700;min-height:46px;}
 div.stButton > button[kind="primary"]:hover {background:#067b72;}
 [data-testid="stDownloadButton"] button {border-radius:9px;}
-</style>''', unsafe_allow_html=True)
+</style>''')
 
 
 def init_state():
@@ -113,11 +113,11 @@ with st.sidebar:
     st.divider()
     st.caption('EDUCATIONAL TOOL · NOT FOR CLINICAL DIAGNOSIS')
 
-st.markdown('''<div class="banner">
+st.html('''<div class="banner">
 <div class="eyebrow">HEALTHCARE  /  COMPUTER VISION  /  GENERATIVE AI</div>
 <h1>CellCount <span style="color:#68e5d5">AI Studio</span></h1>
 <p>Blood-smear cell detection and technician review. Measure RBCs, WBCs and platelets with a trained YOLO11n model, compare against a classical baseline, and assess super-resolution responsibly.</p>
-</div>''', unsafe_allow_html=True)
+</div>''')
 
 
 def badge(ok, yes='READY', no='ACTION REQUIRED'):
@@ -168,9 +168,9 @@ if page == 'Analysis Lab':
                         disabled=not images or len(images)>10)
     with right:
         st.markdown('**Pipeline status**')
-        st.markdown(f'''<div class="panel"><h3>Detection runtime {badge(available['detector'],'ONNX MODEL FOUND','BASELINE ONLY')}</h3>
+        st.html(f'''<div class="panel"><h3>Detection runtime {badge(available['detector'],'ONNX MODEL FOUND','BASELINE ONLY')}</h3>
 <p>1 · Upload & quality check &nbsp; → &nbsp; 2 · YOLO / OpenCV &nbsp; → &nbsp; 3 · Cell counting &nbsp; → &nbsp; 4 · Technician verification<br/><br/>
-<b>Optional experiment:</b> 160×120 input → Real-ESRGAN 4× → YOLO. Count changes alone do not prove accuracy gains or hallucinations.</p></div>''', unsafe_allow_html=True)
+<b>Optional experiment:</b> 160×120 input → Real-ESRGAN 4× → YOLO. Count changes alone do not prove accuracy gains or hallucinations.</p></div>''')
         st.info('**Privacy:** Processing happens on the app server. Do not upload identifiable patient images or sensitive clinical data. No images are deliberately saved by the app, but hosting providers may log operational metadata.')
         if run_results:
             reviewed,total = summarize_review_status(run_results, st.session_state.approvals)
@@ -269,7 +269,7 @@ if page == 'Analysis Lab':
         with st.expander('Individual cell detection coordinates and confidence'):
             st.dataframe(pd.DataFrame(r['details']), use_container_width=True, hide_index=True)
     else:
-        st.markdown('<div class="panel"><h3>No images analyzed yet</h3><p>Use the uploader above and click Run real image analysis to obtain results. This application never displays fabricated model predictions.</p></div>', unsafe_allow_html=True)
+        st.html('<div class="panel"><h3>No images analyzed yet</h3><p>Use the uploader above and click Run real image analysis to obtain results. This application never displays fabricated model predictions.</p></div>')
 
 elif page == 'Technician Review':
     st.markdown('### Human-in-the-Loop Review')
