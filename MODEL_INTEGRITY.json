@@ -1,0 +1,13 @@
+{
+  "models": {
+    "cellcount_yolo11n.onnx": {
+      "bytes": 10665389,
+      "sha256": "ddefdf9503c6e6fe1174ecb815debf19687c99ed0d86080929993eb9e2a9bc62"
+    },
+    "realesr_general_x4v3.onnx": {
+      "bytes": 4866420,
+      "sha256": "7b10e80021ec3e0ff35017ae5022791879d93a799b2e201e1010a37510202266"
+    }
+  },
+  "source": "User-supplied completed Colab output ZIP; checked with OpenCV DNN model forward"
+}

@@ -1,0 +1,10 @@
+__pycache__/
+.pytest_cache/
+.venv/
+*.pyc
+.DS_Store
+.env
+*.zip
+# Do not add patient, client, or uploaded smear images.
+private_images/
+cellcount_evidence_tmp/
