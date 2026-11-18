@@ -1,0 +1,29 @@
+{
+  "MAE": [
+    {
+      "condition": "clean_lr_raw",
+      "Platelets": 0.35,
+      "RBC": 4.6,
+      "WBC": 0.1
+    },
+    {
+      "condition": "clean_lr_sr",
+      "Platelets": 0.4,
+      "RBC": 6.55,
+      "WBC": 0.1
+    },
+    {
+      "condition": "degraded_lr_raw",
+      "Platelets": 0.55,
+      "RBC": 5.2,
+      "WBC": 0.1
+    },
+    {
+      "condition": "degraded_lr_sr",
+      "Platelets": 0.65,
+      "RBC": 4.65,
+      "WBC": 0.1
+    }
+  ],
+  "note": "Values computed by running this notebook; box errors relative to provided BCCD annotations."
+}
